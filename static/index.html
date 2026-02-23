@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chain Lens</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+<h1>Chain Lens</h1>
+<div class="subtitle">
+Understand Bitcoin transactions without technical knowledge
+</div>
+
+<div class="tabs">
+    <div class="tab active" onclick="switchTab('tx')">Analyze Transaction</div>
+    <div class="tab" onclick="switchTab('block')">Explore Block</div>
+</div>
+
+<!-- TRANSACTION SECTION -->
+<div id="tx-section" class="section active">
+
+<div class="card">
+    <h2>Paste Transaction Fixture</h2>
+    <textarea id="tx-input" placeholder="Paste JSON fixture here"></textarea>
+    <button onclick="analyzeTx()">Analyze</button>
+</div>
+
+<div id="tx-result"></div>
+
+</div>
+
+<!-- BLOCK SECTION -->
+<div id="block-section" class="section">
+
+<div class="card">
+    <h2>Upload Block File</h2>
+    <input type="file" id="block-file">
+    <button onclick="analyzeBlock()">Analyze Block</button>
+</div>
+
+<div id="block-result"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

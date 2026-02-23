@@ -1,27 +1,10 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
+set -e
 
-###############################################################################
-# web.sh — Bitcoin transaction web visualizer
-#
-# Starts the web visualizer server.
-#
-# Behavior:
-#   - Reads PORT env var (default: 3000)
-#   - Prints the URL (e.g., http://127.0.0.1:3000) to stdout
-#   - Keeps running until terminated (CTRL+C / SIGTERM)
-#   - Must serve GET /api/health -> 200 { "ok": true }
-#
-# TODO: Replace the stub below with your web server start command.
-###############################################################################
+PORT=${PORT:-3000}
 
-PORT="${PORT:-3000}"
+cargo build --release >/dev/null 2>&1
 
-# TODO: Start your web server here, for example:
-#   exec node server.js
-#   exec python -m http.server "$PORT"
-#   exec cargo run --release -- --port "$PORT"
+echo "http://127.0.0.1:$PORT"
 
-echo "Error: Web visualizer is not yet implemented" >&2
-echo "Set up your web server to listen on port $PORT" >&2
-exit 1
+PORT=$PORT ./target/release/web
