@@ -2,7 +2,7 @@
 
 ChainLens is a **Bitcoin blockchain analysis CLI tool** that parses raw Bitcoin block data and generates structured reports about blocks, transactions, scripts, and potential warnings.
 
-This project was developed as part of the **Summer of Bitcoin 2026 Developer Challenge (Week 1)**.
+
 
 ---
 
